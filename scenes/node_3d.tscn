@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bik2t16160r53"]
 
 [ext_resource type="Script" uid="uid://cwok17qf73bo5" path="res://scenes/player.gd" id="1_tyffc"]
+[ext_resource type="Material" uid="uid://dyc243kj4y8mp" path="res://scenes/wall_material.tres" id="2_ns6u7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyffc"]
 
@@ -9,6 +10,9 @@ size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tyffc"]
 size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyffc"]
+albedo_color = Color(0.21960784, 0.6745098, 0.2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ns6u7"]
 size = Vector3(20, 3, 0.5)
@@ -55,6 +59,7 @@ shape = SubResource("BoxShape3D_tyffc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1859355255]
 mesh = SubResource("BoxMesh_tyffc")
+surface_material_override/0 = SubResource("StandardMaterial3D_tyffc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1473289413]
 transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
@@ -68,6 +73,7 @@ shape = SubResource("BoxShape3D_ns6u7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NorthWall" unique_id=1709376427]
 mesh = SubResource("BoxMesh_5t4e2")
+surface_material_override/0 = ExtResource("2_ns6u7")
 
 [node name="SouthWall" type="StaticBody3D" parent="." unique_id=2090622349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 10)
@@ -78,6 +84,7 @@ shape = SubResource("BoxShape3D_xvgsr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SouthWall" unique_id=51014660]
 mesh = SubResource("BoxMesh_oqwcg")
+surface_material_override/0 = ExtResource("2_ns6u7")
 
 [node name="WestWall" type="StaticBody3D" parent="." unique_id=710975473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.5, 0)
@@ -88,6 +95,7 @@ shape = SubResource("BoxShape3D_a6664")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WestWall" unique_id=823895908]
 mesh = SubResource("BoxMesh_10v3s")
+surface_material_override/0 = ExtResource("2_ns6u7")
 
 [node name="EastWall" type="StaticBody3D" parent="." unique_id=171365557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.5, 0)
@@ -98,3 +106,4 @@ shape = SubResource("BoxShape3D_cptob")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EastWall" unique_id=1493148099]
 mesh = SubResource("BoxMesh_b2yaj")
+surface_material_override/0 = ExtResource("2_ns6u7")
