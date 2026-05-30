@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cwok17qf73bo5" path="res://scenes/player.gd" id="1_tyffc"]
 [ext_resource type="Material" uid="uid://dyc243kj4y8mp" path="res://scenes/wall_material.tres" id="2_ns6u7"]
 [ext_resource type="PackedScene" uid="uid://b1x5vbxq7nhf2" path="res://scenes/collectible.tscn" id="3_5t4e2"]
+[ext_resource type="Script" uid="uid://du7nnlchqemfa" path="res://scenes/label.gd" id="4_xvgsr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyffc"]
 
@@ -117,3 +118,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
 
 [node name="Collectible3" parent="." unique_id=1233466218 instance=ExtResource("3_5t4e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1089493397]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1962408091]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 32
+text = "Collected: 0 / 3"
+script = ExtResource("4_xvgsr")
