@@ -3,6 +3,8 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @export var mouse_sensitivity := 0.005
+@onready var animation_player: AnimationPlayer = $Billy/AnimationPlayer
+var is_standing = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -40,3 +42,17 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	update_animation()
+
+func update_animation():
+	var horizontal_speed = Vector2(velocity.x, velocity.z).length()
+	
+	if horizontal_speed > 0.1:
+		is_standing = false
+		if animation_player.current_animation != "walk":
+			animation_player.play("walk")
+	else:
+		if not is_standing:
+			is_standing = true
+			var stands = ["stand1", "stand2", "stand3"]
+			animation_player.play(stands.pick_random())
