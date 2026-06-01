@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bik2t16160r53"]
 
 [ext_resource type="Script" uid="uid://cwok17qf73bo5" path="res://scenes/player.gd" id="1_tyffc"]
+[ext_resource type="PackedScene" uid="uid://dyf378v8jihha" path="res://assets/cartoon_network_fusionfall-billy.glb" id="2_cptob"]
 [ext_resource type="PackedScene" uid="uid://b1x5vbxq7nhf2" path="res://scenes/collectible.tscn" id="3_5t4e2"]
 [ext_resource type="Script" uid="uid://du7nnlchqemfa" path="res://scenes/label.gd" id="4_xvgsr"]
 [ext_resource type="PackedScene" uid="uid://ban3gjl1imvip" path="res://assets/kenney_city-kit-suburban_20/Models/GLB format/building-type-b.glb" id="5_10v3s"]
@@ -29,7 +30,10 @@ script = ExtResource("1_tyffc")
 shape = SubResource("CapsuleShape3D_tyffc")
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1536833334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 2, 4)
+
+[node name="Billy" parent="Player" unique_id=203470793 instance=ExtResource("2_cptob")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.9, 0)
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=230068232]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
